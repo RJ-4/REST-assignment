@@ -38,4 +38,18 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.getProductById(productId);
 	}
 
+	@Override
+	@Transactional
+	public long getTotalNumberOfProducts() {
+
+		return productDAO.getTotalNumberOfProducts();
+	}
+
+	@Override
+	@Transactional
+	public Product updateProduct(int productId, Product updatedProduct) {
+		
+		return productDAO.updateProduct(productId, updatedProduct);
+	}
+
 }

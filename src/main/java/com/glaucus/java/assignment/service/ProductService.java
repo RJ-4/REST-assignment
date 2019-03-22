@@ -11,4 +11,9 @@ public interface ProductService {
 	public List<Product> getAllProducts();
 	
 	public Product getProductById(int productId);
+	
+	public long getTotalNumberOfProducts();
+	
+	public Product updateProduct(int productId, Product updatedProduct);
+
 }
