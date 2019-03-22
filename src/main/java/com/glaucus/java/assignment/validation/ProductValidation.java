@@ -22,4 +22,5 @@ public class ProductValidation {
 			throw new RuntimeException(PRODUCT_UNIT_PRICE_CANNOT_BE_EMPTY_MESSAGE);
 		}
 	}
+	
 }

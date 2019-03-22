@@ -1,4 +1,4 @@
-package com.glaucus.java.assignment.error;
+package com.glaucus.java.assignment.errorResponse;
 
 public class ErrorResponse {
 

@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.glaucus.java.assignment.error.ErrorResponse;
+import com.glaucus.java.assignment.errorResponse.ErrorResponse;
 import com.glaucus.java.assignment.exception.ProductNotFoundException;
 
 @ControllerAdvice
