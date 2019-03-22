@@ -75,4 +75,16 @@ public class ProductDAOImpl implements ProductDAO {
 		existingProduct.setStock(updatedProduct.getStock());
 		return existingProduct;
 	}
+
+	@Override
+	public boolean removeProduct(int productId) {
+		
+		Session session = entityManager.unwrap(Session.class);
+		Product product = session.get(Product.class, productId);
+		if(product == null) {
+			return false;
+		}
+		session.delete(product);
+		return true;
+	}
 }

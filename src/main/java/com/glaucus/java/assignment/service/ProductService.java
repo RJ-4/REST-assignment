@@ -15,5 +15,7 @@ public interface ProductService {
 	public long getTotalNumberOfProducts();
 	
 	public Product updateProduct(int productId, Product updatedProduct);
+	
+	public boolean removeProduct(int productId);
 
 }

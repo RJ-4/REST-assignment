@@ -15,4 +15,6 @@ public interface ProductDAO {
 	public long getTotalNumberOfProducts();
 	
 	public Product updateProduct(int productId, Product updatedProduct);
+	
+	public boolean removeProduct(int productId);
 }

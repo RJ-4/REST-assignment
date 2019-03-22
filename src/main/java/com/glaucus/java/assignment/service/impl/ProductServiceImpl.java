@@ -52,4 +52,11 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.updateProduct(productId, updatedProduct);
 	}
 
+	@Override
+	@Transactional
+	public boolean removeProduct(int productId) {
+
+		return productDAO.removeProduct(productId);
+	}
+
 }
