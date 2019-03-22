@@ -9,4 +9,6 @@ public interface ProductDAO {
 	public Product addProduct(Product newProduct);
 	
 	public List<Product> getAllProducts();
+	
+	public Product getProductById(int productId);
 }
