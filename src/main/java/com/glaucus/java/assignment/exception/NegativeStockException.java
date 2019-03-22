@@ -1,5 +1,11 @@
 package com.glaucus.java.assignment.exception;
 
+/**
+ * Declares an exception for negative values of stock of product.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 public class NegativeStockException extends RuntimeException {
 
 	/**

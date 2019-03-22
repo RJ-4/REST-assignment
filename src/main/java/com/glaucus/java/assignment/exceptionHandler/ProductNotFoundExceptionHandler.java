@@ -8,9 +8,22 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.glaucus.java.assignment.errorResponse.ErrorResponse;
 import com.glaucus.java.assignment.exception.ProductNotFoundException;
 
+/**
+ * Contains global exception handlers that intercepts/handles all exceptions that are occurred during the client-server communication.
+ *  
+ * @author Rishabh Jain
+ *
+ */
 @ControllerAdvice
 public class ProductNotFoundExceptionHandler {
 
+	/**
+	 * Exception handler for ProductNotFoundException. Handles exception if the product is not found in the database.
+	 * 
+	 * @param e Reference for ProductNotFoundException
+	 * 
+	 * @return Response Entity of ErrorResponse type.
+	 */
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleProductNotFoundException(ProductNotFoundException e) {
 		
@@ -25,6 +38,13 @@ public class ProductNotFoundExceptionHandler {
 		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
 	}
 	
+	/**
+	 * Exception handler for all exceptions except for the ProductNotFoundException.
+	 * 
+	 * @param e Reference for Exception
+	 * 
+	 * @return Response Entity of ErrorResponse type.
+	 */
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleBadRequestException(Exception e) {
 		

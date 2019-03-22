@@ -7,6 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Model class which describes the properties or attributes of product.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 @Entity
 @Table(name = "product")
 public class Product {

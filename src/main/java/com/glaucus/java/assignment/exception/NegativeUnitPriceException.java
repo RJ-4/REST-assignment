@@ -1,5 +1,11 @@
 package com.glaucus.java.assignment.exception;
 
+/**
+ * Declares an exception for unit price of the product if it is less than or equal to 0.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 public class NegativeUnitPriceException extends RuntimeException {
 
 	/**

@@ -1,5 +1,11 @@
 package com.glaucus.java.assignment.exception;
 
+/**
+ * Declares an exception if the product is not found in the database.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 public class ProductNotFoundException extends RuntimeException {
 
 	/**
