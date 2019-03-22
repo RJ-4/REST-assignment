@@ -23,10 +23,10 @@ public class Product {
 	private String description;
 	
 	@Column(name = "unit_price")
-	private double unitPrice;
+	private Double unitPrice;
 	
 	@Column(name = "stock")
-	private int stock;
+	private Integer stock;
 
 	public int getId() {
 		return id;
@@ -44,7 +44,7 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getUnitPrice() {
+	public Double getUnitPrice() {
 		return unitPrice;
 	}
 
@@ -52,11 +52,11 @@ public class Product {
 		this.unitPrice = unitPrice;
 	}
 
-	public int getStock() {
+	public Integer getStock() {
 		return stock;
 	}
 
-	public void setStock(int stock) {
+	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
 

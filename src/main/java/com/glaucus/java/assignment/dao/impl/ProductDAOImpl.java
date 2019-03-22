@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.glaucus.java.assignment.dao.ProductDAO;
+import com.glaucus.java.assignment.exception.ProductNotFoundException;
 import com.glaucus.java.assignment.model.Product;
 
 @Repository
@@ -63,16 +64,23 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		Session session = entityManager.unwrap(Session.class);
 		Product existingProduct = session.get(Product.class, productId);
+		
+		if(existingProduct == null) {
+			throw new ProductNotFoundException(PRODUCT_NOT_FOUND_ERROR_MESSAGE);
+		}
+		
 		if(updatedProduct.getDescription() != null) {
-			existingProduct.setDescription(updatedProduct.getDescription());
+			existingProduct.setDescription(updatedProduct.getDescription().trim());
 		}
 		if(updatedProduct.getName() != null) {
-			existingProduct.setName(updatedProduct.getName());
+			existingProduct.setName(updatedProduct.getName().trim());
 		}
-		if(updatedProduct.getUnitPrice() != 0) {
+		if(updatedProduct.getUnitPrice() != null) {
 			existingProduct.setUnitPrice(updatedProduct.getUnitPrice());
 		}
-		existingProduct.setStock(updatedProduct.getStock());
+		if(updatedProduct.getStock() != null) {
+			existingProduct.setStock(updatedProduct.getStock());
+		}
 		return existingProduct;
 	}
 
