@@ -1,5 +1,8 @@
 package com.glaucus.java.assignment.service.impl;
 
+import static com.glaucus.java.assignment.constants.Constants.NO_PRODUCTS_FOUND_EXCEPTION;
+import static com.glaucus.java.assignment.constants.Constants.PRODUCT_NOT_FOUND_ERROR_MESSAGE;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -13,8 +16,6 @@ import com.glaucus.java.assignment.model.Product;
 import com.glaucus.java.assignment.service.ProductService;
 import com.glaucus.java.assignment.validation.ProductValidation;
 
-import static com.glaucus.java.assignment.constants.Constants.*;
-
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -27,6 +28,8 @@ public class ProductServiceImpl implements ProductService {
 
 		ProductValidation newValidation = new ProductValidation();
 		newValidation.addOrUpdateProductValidation(newProduct);
+		newValidation.checkStock(newProduct.getStock());
+		newValidation.checkUnitPrice(newProduct.getUnitPrice());
 		return productDAO.addProduct(newProduct);
 	}
 
@@ -63,6 +66,14 @@ public class ProductServiceImpl implements ProductService {
 	@Transactional
 	public Product updateProduct(int productId, Product updatedProduct) {
 		
+		ProductValidation newValidation = new ProductValidation();
+		
+		if(updatedProduct.getStock() != null) {
+			newValidation.checkStock(updatedProduct.getStock());
+		}
+		if(updatedProduct.getUnitPrice() != null) {
+			newValidation.checkUnitPrice(updatedProduct.getUnitPrice());
+		}		
 		return productDAO.updateProduct(productId, updatedProduct);
 	}
 

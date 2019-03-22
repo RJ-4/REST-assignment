@@ -16,4 +16,8 @@ public class Constants {
 	
 	public static final String PRODUCT_UNIT_PRICE_CANNOT_BE_EMPTY_MESSAGE = "Product unit price cannot be empty!!!";
 	
+	public static final String NEGATIVE_STOCK_EXCEPTION_MESSAGE = "Product stock cannot be negative!!!";
+	
+	public static final String UNIT_PRICE_EXCEPTION_MESSAGE = "Product unit price must be positive!!!";
+	
 }
