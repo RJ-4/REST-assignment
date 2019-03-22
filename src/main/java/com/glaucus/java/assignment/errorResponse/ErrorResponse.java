@@ -1,5 +1,11 @@
 package com.glaucus.java.assignment.errorResponse;
 
+/**
+ * Describes the type and structure of response that will be sent to the client in case of an error/exception.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 public class ErrorResponse {
 
 	private int statusCode;
@@ -8,6 +14,13 @@ public class ErrorResponse {
 	
 	private long timestamp;
 
+	/**
+	 * Creates a new ErrorResponse object
+	 * 
+	 * @param statusCode HTTP status error code
+	 * @param errorMessage Message due to which error occured
+	 * @param timestamp Timestamp of the error
+	 */
 	public ErrorResponse(int statusCode, String errorMessage, long timestamp) {
 		super();
 		this.statusCode = statusCode;
@@ -15,6 +28,9 @@ public class ErrorResponse {
 		this.timestamp = timestamp;
 	}
 
+	/**
+	 * Creates a new ErrorResponse object
+	 */
 	public ErrorResponse() {}
 
 	public int getStatusCode() {

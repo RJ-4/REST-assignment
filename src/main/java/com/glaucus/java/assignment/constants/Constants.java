@@ -1,5 +1,11 @@
 package com.glaucus.java.assignment.constants;
 
+/**
+ * Constants declares all the constant values used throughout the program.
+ * 
+ * @author Rishabh Jain
+ *
+ */
 public class Constants {
 
 	public static final String GET_ALL_PRODUCTS_QUERY = "FROM Product";
